@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Marcellus&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#musik">Musik</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#surat">Surat</a>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home">
+  <div class="petals">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Happy<br>
+      <em>Birthday</em>
+    </h1>
+    <div class="hero-name">Lala, My beloved girlfriend</div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Special for u, my love</p>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider">· · ·</div>
+
+<!-- ═══════════════ MUSIK ═══════════════ -->
+<section id="musik">
+  <div class="musik-inner">
+    <div class="section-label">Playlist</div>
+    <h2 class="section-title">Songs For <em>You</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="music-card">
+      <div class="player-wrap">
+
+        <!-- Album art / vinyl -->
+        <div class="music-art" id="vinylArt">
+          <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+
+        <!-- Track info -->
+        <div class="music-title" id="trackTitle">Hanya Untukmu</div>
+        <div class="music-artist" id="trackArtist">Ten2five</div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="time-row">
+          <span id="timeCurrent">0:00</span>
+          <span id="timeDuration">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="player-controls">
+          <button class="ctrl-btn" id="btnPrev" title="Sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+          </button>
+          <button class="play-btn" id="btnPlay">
+            <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
+            <svg id="iconPause" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16" rx="1" fill="white"/><rect x="14" y="4" width="4" height="16" rx="1" fill="white"/></svg>
+          </button>
+          <button class="ctrl-btn" id="btnNext" title="Berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+          </button>
+        </div>
+
+        <!-- Audio element -->
+        <audio id="audioPlayer" preload="none"></audio>
+      </div>
+    </div>
+
+    <!-- Playlist -->
+    <div class="music-card">
+      <ul class="music-list" id="playlist">
+        <li class="track-item active" data-index="0" data-src="Hanya Untukmu by Ten2five.aac">
+          <span class="num">1</span>
+          <div class="song-info">
+            <div class="song-name">Hanya Untukmu</div>
+            <div class="song-singer">Ten2five</div>
+          </div>
+          <span class="track-dur" data-index="0">—</span>
+        </li>
+        <li class="track-item" data-index="1" data-src="Can't Help Falling In Love by Elvis Presley.aac">
+          <span class="num">2</span>
+          <div class="song-info">
+            <div class="song-name">Can't Help Falling In Love</div>
+            <div class="song-singer">Elvis Presley</div>
+          </div>
+          <span class="track-dur" data-index="1">—</span>
+        </li>
+        <li class="track-item" data-index="2" data-src="Shape Of My Heart by Backstreetboys.aac">
+          <span class="num">3</span>
+          <div class="song-info">
+            <div class="song-name">Shape Of My Heart</div>
+            <div class="song-singer">Backstreet Boys</div>
+          </div>
+          <span class="track-dur" data-index="2">—</span>
+        </li>
+        <li class="track-item" data-index="3" data-src="Love by Wave To Earth.aac">
+          <span class="num">4</span>
+          <div class="song-info">
+            <div class="song-name">Love</div>
+            <div class="song-singer">Wave to Earth</div>
+          </div>
+          <span class="track-dur" data-index="3">—</span>
+        </li>
+        <li class="track-item" data-index="4" data-src="Heaven by Bryan Adams.aac">
+          <span class="num">5</span>
+          <div class="song-info">
+            <div class="song-name">Heaven</div>
+            <div class="song-singer">Bryan Adams</div>
+          </div>
+          <span class="track-dur" data-index="4">—</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">· · ·</div>
+
+<!-- ═══════════════ GALERI ═══════════════ -->
+<section id="galeri">
+  <div class="section-label">Kenangan</div>
+  <h2 class="section-title">Dirimu yang <em>Terindah</em></h2>
+  <div class="section-rule"></div>
+
+  <div class="polaroid-wall">
+
+    <!-- Polaroid 1 — miring kiri -->
+    <div class="polaroid p-tilt-left">
+      <div class="polaroid-photo pb1">
+        <img src="1.jpg" alt="Foto 1">
+      </div>
+    </div>
+
+    <!-- Polaroid 2 — lurus -->
+    <div class="polaroid p-straight">
+      <div class="polaroid-photo pb2">
+          <img src="2.jpg" alt="Foto 2">
+      </div>
+    </div>
+
+    <!-- Polaroid 3 — miring kanan -->
+    <div class="polaroid p-tilt-right">
+      <div class="polaroid-photo pb3">
+        <img src="3.jpg" alt="Foto 3">
+      </div>
+    </div>
+
+    <!-- Polaroid 4 — lurus -->
+    <div class="polaroid p-straight">
+      <div class="polaroid-photo pb4">
+        <img src="4.jpg" alt="Foto 4">
+      </div>
+    </div>
+
+    <!-- Polaroid 5 — miring kiri sedikit -->
+    <div class="polaroid p-tilt-left-sm">
+      <div class="polaroid-photo pb5">
+        <img src="5.jpg" alt="Foto 5">
+      </div>
+    </div>
+
+    <!-- Polaroid 6 — miring kanan sedikit -->
+    <div class="polaroid p-tilt-right-sm">
+      <div class="polaroid-photo pb6">
+        <img src="6.jpg" alt="Foto 6">
+      </div>
+    </div>
+
+    <!-- Polaroid 7 — lurus -->
+    <div class="polaroid p-straight">
+      <div class="polaroid-photo pb7">
+        <img src="7.jpg" alt="Foto 7">
+      </div>
+    </div>
+
+    <!-- Polaroid 8 — miring kiri -->
+    <div class="polaroid p-tilt-left">
+      <div class="polaroid-photo pb1">
+        <img src="8.jpg" alt="Foto 8">
+      </div>
+    </div>
+
+  </div>
+
+  <p class="galeri-hint">Ganti <code>fotoN.jpg</code> dengan nama file foto kamu</p>
+</section>
+
+<div class="divider">· · ·</div>
+
+<!-- ═══════════════ SURAT ═══════════════ -->
+<section id="surat">
+  <div class="surat-inner">
+    <div class="section-label">Dari Hati</div>
+    <h2 class="section-title">Surat <em>Cintaku</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="envelope">
+      <div class="envelope-top">
+        <div class="seal">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+      </div>
+
+      <div class="letter-body">
+        <div class="letter-date">for : Lala, my sweetie girlfriend</div>
+        <div class="letter-salutation">HAI HAIIII SAYANG,</div>
+
+        <p>
+          Hari ini ada yang ultah yyaaaa?? ciee ciee yang ke-18 nii, perjalanan kamu sudah cukup
+          panjang yyaaa.. begitu juga perjuangannya, maacii banyak sudah bertahan sejauh ini,
+          semoga kedepannya banyak hal-hal baik yang menghampiri yyaaa sayangg.. dan semoga 
+          cuman hal baik yang dateng, hal-hal buruk hushh hushhh!!
+        </p>
+
+        <p>
+          Makin tua aja yyaaa kamuu (jangan marah pls), sudah 18, itungannya sudah legal yh.. 
+          jangan macem-macem loh yh. mentang-mentang sudah legal, hindari pergaulan yang kurang baik
+          say no ke hal-hal buruk, say no ke pergaulan bebas, termasuk tawuran hhhh (awas aja kamu!)
+        </p>
+
+        <p>
+          Thank u so much for being part of ma life, thank u for growing well, maacii banyak yyaa sayangg
+          sudah jadi sumber kebahagiaan aku, aku bersyukur kamu ada sama aku, 
+          aku bersyukur kamu lahir di
+          dunia ini.. 
+        </p>
+
+        <p>
+          Di ulang tahun kamu yang ke-18 inii... aku berdoa agar kamu selalu di pertemukan sama
+          manusia-manusia baik, di lancarkan urusannyaa.. di kasi kemudahan sama Tuhan di setiap
+          langkahnya, dan semoga semua wishlist kamu tercapai yyaaa di umur 18 inii, AAMIINNNNN  
+          :D
+        </p>
+
+        <p>
+          Aku bakal jadi orang yang selalu nemenin kamu di setiap kamu melangkah, i'll be ur #1 
+            supporter!! i'm promise, even ketika semua orang nanti jauhin kamu.. aku selalu ada 
+            di samping kamu, tenang ajaaaa :3
+        </p>
+        
+        <p>
+          <em>
+            Sekali lagi, happy birthday yyaa sayangg.. aku sayang kamu, i love u, always every day,
+            every hour, minute, and increases every day. i will always love u sayang.. i love u more
+            than i love myself ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
+          </em>
+        </p>
+
+        <div class="letter-ps">
+          Hope u like it, sayang
+        </div>
+
+        <div class="letter-sign">
+          <p>From ur beloved boyfriend,</p>
+          <p class="signature">Jaki</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-bg-ornament">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="40"/><line x1="100" y1="20" x2="100" y2="180"/><line x1="20" y1="100" x2="180" y2="100"/><line x1="43" y1="43" x2="157" y2="157"/><line x1="157" y1="43" x2="43" y2="157"/></svg>
+  </div>
+  <div class="f-tag">For Lala</div>
+  <div class="f-title">Happy Birthday,<br>My Love</div>
+  <div class="f-ornament">
+    <span>
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </span>
+    <span class="f-heart">
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </span>
+  </div>
+  <div class="f-note">Made with love · Only for you</div>
+</footer>
+
+<!-- ═══════════════ AUDIO PLAYER SCRIPT ═══════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  var tracks = [
+    { src: 'Hanya Untukmu by Ten2five.aac',                  title: 'Hanya Untukmu',             artist: 'Ten2five' },
+    { src: "Can't Help Falling In Love by Elvis Presley.aac", title: "Can't Help Falling In Love", artist: 'Elvis Presley' },
+    { src: 'Shape Of My Heart by Backstreetboys.aac',         title: 'Shape Of My Heart',          artist: 'Backstreet Boys' },
+    { src: 'Love by Wave To Earth.aac',                       title: 'Love',                       artist: 'Wave to Earth' },
+    { src: 'Heaven by Bryan Adams.aac',                       title: 'Heaven',                     artist: 'Bryan Adams' }
+  ];
+
+  var current   = 0;
+  var isPlaying = false;
+
+  var audio     = document.getElementById('audioPlayer');
+  var btnPlay   = document.getElementById('btnPlay');
+  var btnPrev   = document.getElementById('btnPrev');
+  var btnNext   = document.getElementById('btnNext');
+  var iconPlay  = document.getElementById('iconPlay');
+  var iconPause = document.getElementById('iconPause');
+  var vinyl     = document.getElementById('vinylArt');
+  var titleEl   = document.getElementById('trackTitle');
+  var artistEl  = document.getElementById('trackArtist');
+  var fillEl    = document.getElementById('progressFill');
+  var barEl     = document.getElementById('progressBar');
+  var curEl     = document.getElementById('timeCurrent');
+  var durEl     = document.getElementById('timeDuration');
+  var items     = document.querySelectorAll('.track-item');
+
+  function fmt(s) {
+    if (!s || isNaN(s) || !isFinite(s)) return '0:00';
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function setUI(playing) {
+    isPlaying = playing;
+    iconPlay.style.display  = playing ? 'none'  : 'block';
+    iconPause.style.display = playing ? 'block' : 'none';
+    if (playing) vinyl.classList.add('spinning');
+    else         vinyl.classList.remove('spinning');
+  }
+
+  function updateActive(idx) {
+    items.forEach(function(el, i) {
+      el.classList.toggle('active', i === idx);
+    });
+  }
+
+  function loadTrack(idx) {
+    current = idx;
+    var t   = tracks[idx];
+
+    /* Reset UI */
+    titleEl.textContent  = t.title;
+    artistEl.textContent = t.artist;
+    fillEl.style.width   = '0%';
+    curEl.textContent    = '0:00';
+    durEl.textContent    = '0:00';
+    updateActive(idx);
+
+    /* Completely reset audio element */
+    audio.pause();
+    audio.removeAttribute('src');
+    audio.load();
+    audio.src = t.src;
+    audio.load();
+  }
+
+  function doPlay() {
+    var promise = audio.play();
+    if (promise !== undefined) {
+      promise.then(function() {
+        setUI(true);
+      }).catch(function(err) {
+        console.warn('Playback failed:', err);
+        setUI(false);
+      });
+    } else {
+      setUI(true);
+    }
+  }
+
+  function togglePlay() {
+    if (!audio.src || audio.src === window.location.href) {
+      loadTrack(current);
+    }
+    if (audio.paused) {
+      doPlay();
+    } else {
+      audio.pause();
+      setUI(false);
+    }
+  }
+
+  /* Audio events */
+  audio.addEventListener('play',  function() { setUI(true);  });
+  audio.addEventListener('pause', function() { setUI(false); });
+  audio.addEventListener('ended', function() {
+    setUI(false);
+    var next = (current + 1) % tracks.length;
+    loadTrack(next);
+    doPlay();
+  });
+
+  audio.addEventListener('timeupdate', function() {
+    if (!audio.duration || isNaN(audio.duration)) return;
+    var pct = (audio.currentTime / audio.duration) * 100;
+    fillEl.style.width = pct + '%';
+    curEl.textContent  = fmt(audio.currentTime);
+    durEl.textContent  = fmt(audio.duration);
+  });
+
+  audio.addEventListener('loadedmetadata', function() {
+    durEl.textContent = fmt(audio.duration);
+    var span = document.querySelector('.track-dur[data-index="' + current + '"]');
+    if (span) span.textContent = fmt(audio.duration);
+  });
+
+  audio.addEventListener('error', function() {
+    console.error('Audio error — pastikan file .aac ada di folder yang sama:', tracks[current].src);
+  });
+
+  /* Progress bar click */
+  barEl.addEventListener('click', function(e) {
+    if (!audio.duration || isNaN(audio.duration)) return;
+    var rect = barEl.getBoundingClientRect();
+    var pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = pct * audio.duration;
+  });
+
+  /* Buttons */
+  btnPlay.addEventListener('click', togglePlay);
+
+  btnPrev.addEventListener('click', function() {
+    var wasPlaying = !audio.paused;
+    loadTrack((current - 1 + tracks.length) % tracks.length);
+    if (wasPlaying) doPlay();
+  });
+
+  btnNext.addEventListener('click', function() {
+    var wasPlaying = !audio.paused;
+    loadTrack((current + 1) % tracks.length);
+    if (wasPlaying) doPlay();
+  });
+
+  items.forEach(function(el) {
+    el.addEventListener('click', function() {
+      var idx = parseInt(el.dataset.index, 10);
+      loadTrack(idx);
+      doPlay();
+    });
+  });
+
+  /* Load first track on ready */
+  loadTrack(0);
+});
+</script>
+
+</body>
+</html>
