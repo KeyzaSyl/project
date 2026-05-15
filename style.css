@@ -210,9 +210,9 @@ section { padding: 5.5rem 2rem 7rem; }
 
 .surat-inner { max-width: 660px; margin: 0 auto; position: relative; z-index: 2; }
 .envelope { background: var(--white); border: 1px solid rgba(217,117,133,0.12); border-radius: 18px; box-shadow: 0 2px 8px rgba(217,117,133,0.07), 0 12px 36px rgba(217,117,133,0.09); overflow: hidden; }
-.envelope-top { background: linear-gradient(145deg, var(--rose-soft) 0%, var(--peach) 100%); padding: 1.8rem; text-align: center; position: relative; }
-.envelope-top::after { content: ''; position: absolute; bottom: -17px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-top: 17px solid var(--peach); }
-.seal { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(145deg, var(--rose), var(--peach-deep)); display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 3px 12px rgba(217,117,133,0.32), 0 0 0 4px rgba(255,255,255,0.3); }
+.envelope-top { background: linear-gradient(145deg, #a63248 0%, #c0485e 60%, #b03a52 100%); padding: 1.8rem; text-align: center; position: relative; }
+.envelope-top::after { content: ''; position: absolute; bottom: -17px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-top: 17px solid #b03a52; }
+.seal { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(145deg, #8c2438, #a63248); display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 3px 12px rgba(140,36,56,0.45), 0 0 0 4px rgba(255,255,255,0.25); }
 .letter-body { padding: 3.8rem 3rem 2.8rem; }
 .letter-date { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--ink-muted); margin-bottom: 1.6rem; opacity: 0.8; }
 .letter-salutation { font-family: 'DM Serif Display', serif; font-size: 1.65rem; font-weight: 400; font-style: italic; color: var(--rose); margin-bottom: 1.6rem; line-height: 1.2; }
