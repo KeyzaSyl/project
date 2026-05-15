@@ -10,6 +10,31 @@
 </head>
 <body>
 
+<!-- ═══════════════ LOADING SCREEN ═══════════════ -->
+<div id="loadingScreen">
+  <div class="ls-scene">
+
+    <!-- Amplop -->
+    <div class="ls-envelope" id="lsEnvelope">
+      <!-- Tutup amplop atas (flap) -->
+      <div class="ls-flap" id="lsFlap"></div>
+      <!-- Body amplop -->
+      <div class="ls-body">
+        <div class="ls-lines">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <!-- Surat yang naik -->
+      <div class="ls-letter" id="lsLetter">
+        <div class="ls-letter-heart">♡</div>
+        <div class="ls-letter-text">For Lala</div>
+      </div>
+    </div>
+
+    <div class="ls-caption" id="lsCaption">opening your gift...</div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <a href="#home">Home</a>
@@ -322,13 +347,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   var tracks = [
-    { src: 'Hanya Untukmu by Ten2five.aac',                               title: 'Hanya Untukmu',                                   artist: 'Ten2five' },
-    { src: "Can't Help Falling In Love by Elvis Presley.aac",             title: "Can't Help Falling In Love",                      artist: 'Elvis Presley' },
-    { src: 'Shape Of My Heart by Backstreetboys.aac',                     title: 'Shape Of My Heart',                               artist: 'Backstreet Boys' },
-    { src: 'Love by Wave To Earth.aac',                                   title: 'Love',                                            artist: 'Wave to Earth' },
-    { src: 'Heaven by Bryan Adams.aac',                                   title: 'Heaven',                                          artist: 'Bryan Adams' },
-    { src: 'An Art Gallery Could Never Be As Unique As You by Mrld.aac',  title: 'An Art Gallery Could Never Be As Unique As You',  artist: 'Mrld' },
-    { src: 'Stand By Me by Oasis.aac',                                    title: 'Stand By Me',                                     artist: 'Oasis' }
+    { src: 'Hanya Untukmu by Ten2five.aac',                  title: 'Hanya Untukmu',             artist: 'Ten2five' },
+    { src: "Can't Help Falling In Love by Elvis Presley.aac", title: "Can't Help Falling In Love", artist: 'Elvis Presley' },
+    { src: 'Shape Of My Heart by Backstreetboys.aac',         title: 'Shape Of My Heart',          artist: 'Backstreet Boys' },
+    { src: 'Love by Wave To Earth.aac',                       title: 'Love',                       artist: 'Wave to Earth' },
+    { src: 'Heaven by Bryan Adams.aac',                       title: 'Heaven',                     artist: 'Bryan Adams' }
   ];
 
   var current   = 0;
@@ -478,6 +501,43 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Load first track on ready */
   loadTrack(0);
 });
+</script>
+
+<!-- ═══════════════ LOADING SCREEN SCRIPT ═══════════════ -->
+<script>
+(function() {
+  var screen  = document.getElementById('loadingScreen');
+  var flap    = document.getElementById('lsFlap');
+  var letter  = document.getElementById('lsLetter');
+  var caption = document.getElementById('lsCaption');
+  var env     = document.getElementById('lsEnvelope');
+
+  // step 1 — tunggu sebentar lalu buka flap
+  setTimeout(function() {
+    flap.classList.add('open');
+  }, 600);
+
+  // step 2 — surat naik
+  setTimeout(function() {
+    letter.classList.add('rise');
+    caption.textContent = 'happy birthday, sayang ♡';
+  }, 1400);
+
+  // step 3 — amplop shake kecil
+  setTimeout(function() {
+    env.classList.add('wiggle');
+  }, 2000);
+
+  // step 4 — fade out loading screen
+  setTimeout(function() {
+    screen.classList.add('ls-hide');
+  }, 2800);
+
+  // step 5 — remove dari DOM
+  setTimeout(function() {
+    screen.remove();
+  }, 3600);
+})();
 </script>
 
 </body>
