@@ -40,6 +40,7 @@
   <a href="#home">Home</a>
   <a href="#musik">Musik</a>
   <a href="#galeri">Galeri</a>
+  <a href="#pesan">Pesan</a>
   <a href="#surat">Surat</a>
 </nav>
 
@@ -250,12 +251,51 @@
 
 <div class="divider">· · ·</div>
 
+<!-- ═══════════════ VOICE NOTE ═══════════════ -->
+<section id="pesan">
+  <div class="vn-section-inner">
+    <div class="section-label">from me</div>
+    <h2 class="section-title">a message <em>for you</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="vn-card">
+      <div class="vn-row">
+        <button class="vn-play-btn" id="vnPlayBtn">
+          <svg id="vnIconPlay" viewBox="0 0 24 24" fill="white" width="16" height="16"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg id="vnIconPause" viewBox="0 0 24 24" fill="white" width="16" height="16" style="display:none"><rect x="6" y="4" width="4" height="16" rx="2"/><rect x="14" y="4" width="4" height="16" rx="2"/></svg>
+        </button>
+        <div class="vn-waveform" id="vnWaveform">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span class="vn-time" id="vnTime">0:00</span>
+      </div>
+      <audio id="vnAudio" preload="none">
+        <source src="voicenote.aac" type="audio/aac">
+        <source src="voicenote.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">· · ·</div>
+
 <!-- ═══════════════ SURAT ═══════════════ -->
 <section id="surat">
   <div class="surat-inner">
     <h2 class="section-title">Special <em>Letter</em></h2>
     <div class="section-rule"></div>
 
+    <!-- ─── ENVELOPE ─── -->
     <div class="envelope">
       <div class="envelope-top">
         <div class="seal">
@@ -540,6 +580,86 @@ document.addEventListener('DOMContentLoaded', function() {
     screen.remove();
   }, 3600);
 })();
+</script>
+
+<!-- ═══════════════ VOICE NOTE SCRIPT ═══════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var vnAudio    = document.getElementById('vnAudio');
+  var vnPlayBtn  = document.getElementById('vnPlayBtn');
+  var vnIconPlay = document.getElementById('vnIconPlay');
+  var vnIconPause= document.getElementById('vnIconPause');
+  var vnTime     = document.getElementById('vnTime');
+  var vnWaveform = document.getElementById('vnWaveform');
+  var vnBars     = vnWaveform.querySelectorAll('span');
+
+  // Format waktu
+  function fmtVn(s) {
+    if (!s || isNaN(s) || !isFinite(s)) return '0:00';
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  // Animasi waveform saat play
+  function startWave() {
+    vnWaveform.classList.add('playing');
+  }
+  function stopWave() {
+    vnWaveform.classList.remove('playing');
+  }
+
+  // Toggle play/pause
+  vnPlayBtn.addEventListener('click', function() {
+    if (vnAudio.paused) {
+      // Pause musik utama dulu kalau lagi main
+      var mainAudio = document.getElementById('audioPlayer');
+      if (mainAudio && !mainAudio.paused) mainAudio.pause();
+
+      vnAudio.play().then(function() {
+        vnIconPlay.style.display  = 'none';
+        vnIconPause.style.display = 'block';
+        startWave();
+      }).catch(function(e) {
+        console.warn('VN play failed:', e);
+      });
+    } else {
+      vnAudio.pause();
+      vnIconPlay.style.display  = 'block';
+      vnIconPause.style.display = 'none';
+      stopWave();
+    }
+  });
+
+  // Update timer & progress waveform
+  vnAudio.addEventListener('timeupdate', function() {
+    vnTime.textContent = fmtVn(vnAudio.currentTime);
+
+    // Highlight bar sesuai progress
+    if (vnAudio.duration && !isNaN(vnAudio.duration)) {
+      var pct = vnAudio.currentTime / vnAudio.duration;
+      var filled = Math.floor(pct * vnBars.length);
+      vnBars.forEach(function(bar, i) {
+        bar.classList.toggle('filled', i <= filled);
+      });
+    }
+  });
+
+  // Selesai
+  vnAudio.addEventListener('ended', function() {
+    vnIconPlay.style.display  = 'block';
+    vnIconPause.style.display = 'none';
+    stopWave();
+    vnTime.textContent = '0:00';
+    vnBars.forEach(function(bar) { bar.classList.remove('filled'); });
+    vnAudio.currentTime = 0;
+  });
+
+  // Error handler
+  vnAudio.addEventListener('error', function() {
+    console.warn('Voice note file tidak ditemukan. Taruh file "voicenote.aac" atau "voicenote.mp3" di folder project.');
+  });
+});
 </script>
 
 </body>
