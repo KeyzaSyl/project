@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, My Love</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love</title>
+
+  <!-- Font: Playfair Display (judul elegan) + DM Sans (teks bersih) + Italianno (tanda tangan) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Italianno&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Awesome — untuk ikon-ikon kecil jika diperlukan -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- File CSS utama kita -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ═══════════════ LOADING SCREEN ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     LOADING SCREEN — Animasi amplop terbuka
+     ═══════════════════════════════════════ -->
 <div id="loadingScreen">
   <div class="ls-scene">
 
-    <!-- Amplop -->
+    <!-- Amplop beranimasi -->
     <div class="ls-envelope" id="lsEnvelope">
-      <!-- Tutup amplop atas (flap) -->
+      <!-- Tutup amplop bagian atas (flap) yang akan terbuka -->
       <div class="ls-flap" id="lsFlap"></div>
-      <!-- Body amplop -->
+
+      <!-- Body amplop dengan garis dekoratif -->
       <div class="ls-body">
         <div class="ls-lines">
           <span></span><span></span><span></span>
         </div>
       </div>
-      <!-- Surat yang naik -->
+
+      <!-- Surat kecil yang naik dari amplop -->
       <div class="ls-letter" id="lsLetter">
         <div class="ls-letter-heart">♡</div>
         <div class="ls-letter-text">For Lala</div>
       </div>
     </div>
 
+    <!-- Teks keterangan di bawah animasi -->
     <div class="ls-caption" id="lsCaption">opening your gift...</div>
+
   </div>
 </div>
 
-<!-- NAV -->
+<!-- ═══════════════════════════════════════
+     NAVIGASI — Fixed di atas halaman
+     ═══════════════════════════════════════ -->
 <nav>
   <a href="#home">Home</a>
   <a href="#musik">Musik</a>
@@ -44,80 +58,126 @@
   <a href="#surat">Surat</a>
 </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     HERO SECTION — Halaman pertama
+     ═══════════════════════════════════════ -->
 <section id="home">
+
+  <!-- Kelopak bunga jatuh sebagai dekorasi latar -->
   <div class="petals">
     <div class="petal"></div><div class="petal"></div><div class="petal"></div>
     <div class="petal"></div><div class="petal"></div><div class="petal"></div>
     <div class="petal"></div><div class="petal"></div><div class="petal"></div>
     <div class="petal"></div><div class="petal"></div><div class="petal"></div>
   </div>
+
+  <!-- Konten utama hero -->
   <div class="hero-content">
+
+    <!-- Judul utama besar -->
     <h1 class="hero-title">
       Happy<br>
       <em>Birthday</em>
     </h1>
+
+    <!-- Nama penerima -->
     <div class="hero-name">Lala, My beloved girlfriend</div>
+
+    <!-- Garis pemisah dekoratif -->
     <div class="hero-divider"></div>
+
+    <!-- Sub judul -->
     <p class="hero-sub">Special for u, my love</p>
+
+    <!-- Ikon panah untuk menunjukkan "scroll ke bawah" -->
     <div class="scroll-hint">
       <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </div>
+
 </section>
 
+<!-- Pemisah antar section -->
 <div class="divider">· · ·</div>
 
-<!-- ═══════════════ MUSIK ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     MUSIK SECTION — Audio player & playlist
+     ═══════════════════════════════════════ -->
 <section id="musik">
   <div class="musik-inner">
+
+    <!-- Label kategori kecil -->
     <div class="section-label">Playlist</div>
+    <!-- Judul section -->
     <h2 class="section-title">Songs For <em>You</em></h2>
+    <!-- Garis ornamen bawah judul -->
     <div class="section-rule"></div>
 
+    <!-- Kartu player utama -->
     <div class="music-card">
       <div class="player-wrap">
 
-        <!-- Album art / vinyl -->
+        <!-- Vinyl / album art berputar saat play -->
         <div class="music-art" id="vinylArt">
-          <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
         </div>
 
-        <!-- Track info -->
+        <!-- Nama lagu yang sedang diputar -->
         <div class="music-title" id="trackTitle">Hanya Untukmu</div>
+        <!-- Nama artis -->
         <div class="music-artist" id="trackArtist">Ten2five</div>
 
-        <!-- Progress bar -->
+        <!-- Bar progres lagu — bisa diklik untuk seek -->
         <div class="progress-bar" id="progressBar">
           <div class="progress-fill" id="progressFill"></div>
         </div>
+
+        <!-- Tampilan waktu: posisi saat ini & total durasi -->
         <div class="time-row">
           <span id="timeCurrent">0:00</span>
           <span id="timeDuration">0:00</span>
         </div>
 
-        <!-- Controls -->
+        <!-- Tombol kontrol: prev, play/pause, next -->
         <div class="player-controls">
           <button class="ctrl-btn" id="btnPrev" title="Sebelumnya">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="19 20 9 12 19 4 19 20"/>
+              <line x1="5" y1="19" x2="5" y2="5"/>
+            </svg>
           </button>
           <button class="play-btn" id="btnPlay">
+            <!-- Ikon play (segitiga) -->
             <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
-            <svg id="iconPause" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16" rx="1" fill="white"/><rect x="14" y="4" width="4" height="16" rx="1" fill="white"/></svg>
+            <!-- Ikon pause (dua kotak) — tersembunyi saat tidak diputar -->
+            <svg id="iconPause" viewBox="0 0 24 24" style="display:none">
+              <rect x="6" y="4" width="4" height="16" rx="1" fill="white"/>
+              <rect x="14" y="4" width="4" height="16" rx="1" fill="white"/>
+            </svg>
           </button>
           <button class="ctrl-btn" id="btnNext" title="Berikutnya">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 4 15 12 5 20 5 4"/>
+              <line x1="19" y1="5" x2="19" y2="19"/>
+            </svg>
           </button>
         </div>
 
-        <!-- Audio element -->
+        <!-- Elemen audio HTML5 — sumber file ditambahkan lewat JavaScript -->
         <audio id="audioPlayer" preload="none"></audio>
+
       </div>
     </div>
 
-    <!-- Playlist -->
+    <!-- Kartu daftar playlist -->
     <div class="music-card">
       <ul class="music-list" id="playlist">
+
+        <!-- Track 1 — aktif saat pertama kali dibuka -->
         <li class="track-item active" data-index="0" data-src="Hanya Untukmu by Ten2five.aac">
           <span class="num">1</span>
           <div class="song-info">
@@ -126,6 +186,8 @@
           </div>
           <span class="track-dur" data-index="0">—</span>
         </li>
+
+        <!-- Track 2 -->
         <li class="track-item" data-index="1" data-src="Can't Help Falling In Love by Elvis Presley.aac">
           <span class="num">2</span>
           <div class="song-info">
@@ -134,6 +196,8 @@
           </div>
           <span class="track-dur" data-index="1">—</span>
         </li>
+
+        <!-- Track 3 -->
         <li class="track-item" data-index="2" data-src="Shape Of My Heart by Backstreetboys.aac">
           <span class="num">3</span>
           <div class="song-info">
@@ -142,6 +206,8 @@
           </div>
           <span class="track-dur" data-index="2">—</span>
         </li>
+
+        <!-- Track 4 -->
         <li class="track-item" data-index="3" data-src="Love by Wave To Earth.aac">
           <span class="num">4</span>
           <div class="song-info">
@@ -150,6 +216,8 @@
           </div>
           <span class="track-dur" data-index="3">—</span>
         </li>
+
+        <!-- Track 5 -->
         <li class="track-item" data-index="4" data-src="Heaven by Bryan Adams.aac">
           <span class="num">5</span>
           <div class="song-info">
@@ -158,6 +226,8 @@
           </div>
           <span class="track-dur" data-index="4">—</span>
         </li>
+
+        <!-- Track 6 -->
         <li class="track-item" data-index="5" data-src="An Art Gallery Could Never Be As Unique As You by Mrld.aac">
           <span class="num">6</span>
           <div class="song-info">
@@ -166,6 +236,8 @@
           </div>
           <span class="track-dur" data-index="5">—</span>
         </li>
+
+        <!-- Track 7 -->
         <li class="track-item" data-index="6" data-src="Stand By Me.aac">
           <span class="num">7</span>
           <div class="song-info">
@@ -174,20 +246,25 @@
           </div>
           <span class="track-dur" data-index="6">—</span>
         </li>
+
       </ul>
     </div>
 
   </div>
 </section>
 
+<!-- Pemisah -->
 <div class="divider">· · ·</div>
 
-<!-- ═══════════════ GALERI ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     GALERI SECTION — Polaroid foto-foto
+     ═══════════════════════════════════════ -->
 <section id="galeri">
   <div class="section-label">Gallery</div>
-  <h2 class="section-title">Lala <em> Pretty</em> Pict's ˙𐃷˙</h2>
+  <h2 class="section-title">Lala <em>Pretty</em> Pict's ˙𐃷˙</h2>
   <div class="section-rule"></div>
 
+  <!-- Grid polaroid wall -->
   <div class="polaroid-wall">
 
     <!-- Polaroid 1 — miring kiri -->
@@ -200,7 +277,7 @@
     <!-- Polaroid 2 — lurus -->
     <div class="polaroid p-straight">
       <div class="polaroid-photo pb2">
-          <img src="2.jpg" alt="Foto 2">
+        <img src="2.jpg" alt="Foto 2">
       </div>
     </div>
 
@@ -218,14 +295,14 @@
       </div>
     </div>
 
-    <!-- Polaroid 5 — miring kiri sedikit -->
+    <!-- Polaroid 5 — sedikit miring kiri -->
     <div class="polaroid p-tilt-left-sm">
       <div class="polaroid-photo pb5">
         <img src="5.jpg" alt="Foto 5">
       </div>
     </div>
 
-    <!-- Polaroid 6 — miring kanan sedikit -->
+    <!-- Polaroid 6 — sedikit miring kanan -->
     <div class="polaroid p-tilt-right-sm">
       <div class="polaroid-photo pb6">
         <img src="6.jpg" alt="Foto 6">
@@ -249,21 +326,34 @@
   </div>
 </section>
 
+<!-- Pemisah -->
 <div class="divider">· · ·</div>
 
-<!-- ═══════════════ VOICE NOTE ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     VOICE NOTE SECTION — Pesan suara
+     ═══════════════════════════════════════ -->
 <section id="pesan">
   <div class="vn-section-inner">
     <div class="section-label">from me</div>
     <h2 class="section-title">a message <em>for you</em></h2>
     <div class="section-rule"></div>
 
+    <!-- Kartu pemutar voice note ala WhatsApp -->
     <div class="vn-card">
       <div class="vn-row">
+
+        <!-- Tombol play/pause voice note -->
         <button class="vn-play-btn" id="vnPlayBtn">
-          <svg id="vnIconPlay" viewBox="0 0 24 24" fill="white" width="16" height="16"><polygon points="5,3 19,12 5,21"/></svg>
-          <svg id="vnIconPause" viewBox="0 0 24 24" fill="white" width="16" height="16" style="display:none"><rect x="6" y="4" width="4" height="16" rx="2"/><rect x="14" y="4" width="4" height="16" rx="2"/></svg>
+          <svg id="vnIconPlay" viewBox="0 0 24 24" fill="white" width="16" height="16">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+          <svg id="vnIconPause" viewBox="0 0 24 24" fill="white" width="16" height="16" style="display:none">
+            <rect x="6" y="4" width="4" height="16" rx="2"/>
+            <rect x="14" y="4" width="4" height="16" rx="2"/>
+          </svg>
         </button>
+
+        <!-- Visualisasi waveform — 50 bar kecil -->
         <div class="vn-waveform" id="vnWaveform">
           <span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span>
@@ -276,8 +366,12 @@
           <span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span>
         </div>
+
+        <!-- Timer waktu yang sudah diputar -->
         <span class="vn-time" id="vnTime">0:00</span>
       </div>
+
+      <!-- Elemen audio untuk voice note — mendukung format .aac dan .mp3 -->
       <audio id="vnAudio" preload="none">
         <source src="voicenote.aac" type="audio/aac">
         <source src="voicenote.mp3" type="audio/mpeg">
@@ -287,26 +381,39 @@
   </div>
 </section>
 
+<!-- Pemisah -->
 <div class="divider">· · ·</div>
 
-<!-- ═══════════════ SURAT ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     SURAT SECTION — Surat cinta berbentuk amplop
+     ═══════════════════════════════════════ -->
 <section id="surat">
   <div class="surat-inner">
     <h2 class="section-title">Special <em>Letter</em></h2>
     <div class="section-rule"></div>
 
-    <!-- ─── ENVELOPE ─── -->
+    <!-- Amplop surat -->
     <div class="envelope">
+
+      <!-- Header amplop dengan segel hati -->
       <div class="envelope-top">
         <div class="seal">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </div>
       </div>
 
+      <!-- Isi surat -->
       <div class="letter-body">
+
+        <!-- Keterangan penerima surat -->
         <div class="letter-date">for : Lala, my sweetie girlfriend</div>
+
+        <!-- Salam pembuka -->
         <div class="letter-salutation">HAI HAIIII SAYANG,</div>
 
+        <!-- Paragraf isi surat — tetap sama dari versi asli -->
         <p>
           Hari ini ada yang ultah yyaaaa?? ciee ciee yang ke-18 nii, perjalanan kamu sudah cukup
           panjang yyaaa.. begitu juga perjuangannya, maacii banyak sudah bertahan sejauh ini,
@@ -323,21 +430,19 @@
         <p>
           Thank u so much for being part of ma life, thank u for growing well, maacii banyak yyaa sayangg
           sudah jadi sumber kebahagiaan aku, aku bersyukur kamu ada sama aku, 
-          aku bersyukur kamu lahir di
-          dunia ini.. 
+          aku bersyukur kamu lahir di dunia ini.. 
         </p>
 
         <p>
           Di ulang tahun kamu yang ke-18 inii... aku berdoa agar kamu selalu di pertemukan sama
           manusia-manusia baik, di lancarkan urusannyaa.. di kasi kemudahan sama Tuhan di setiap
-          langkahnya, dan semoga sebagian wishlist kamu tercapai yyaaa di umur 18 inii, AAMIINNNNN  
-          :D
+          langkahnya, dan semoga sebagian wishlist kamu tercapai yyaaa di umur 18 inii, AAMIINNNNN  :D
         </p>
 
         <p>
           Aku bakal jadi orang yang selalu nemenin kamu di setiap kamu melangkah, i'll be ur #1 
-            supporter!! i'm promise, even ketika semua orang nanti jauhin kamu.. aku selalu ada 
-            di samping kamu, tenang ajaaaa :3
+          supporter!! i'm promise, even ketika semua orang nanti jauhin kamu.. aku selalu ada 
+          di samping kamu, tenang ajaaaa :3
         </p>
         
         <p>
@@ -348,318 +453,377 @@
           </em>
         </p>
 
+        <!-- Kalimat penutup -->
         <div class="letter-ps">
           Hope u like it, sayang
         </div>
 
+        <!-- Tanda tangan pengirim -->
         <div class="letter-sign">
           <p>From ur beloved boyfriend,</p>
           <p class="signature">Jaki</p>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     FOOTER — Bagian paling bawah halaman
+     ═══════════════════════════════════════ -->
 <footer>
+  <!-- Ornamen lingkaran dekoratif di belakang -->
   <div class="footer-bg-ornament">
-    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="40"/><line x1="100" y1="20" x2="100" y2="180"/><line x1="20" y1="100" x2="180" y2="100"/><line x1="43" y1="43" x2="157" y2="157"/><line x1="157" y1="43" x2="43" y2="157"/></svg>
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80"/>
+      <circle cx="100" cy="100" r="60"/>
+      <circle cx="100" cy="100" r="40"/>
+    </svg>
   </div>
+
+  <!-- Teks footer -->
   <div class="f-tag">For Lala</div>
   <div class="f-title">Happy Birthday,<br>My Love</div>
+
+  <!-- Ornamen hati -->
   <div class="f-ornament">
-    <span>
-      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    </span>
     <span class="f-heart">
-      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-    </span>
-    <span>
-      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
     </span>
   </div>
+
+  <!-- Credit pembuat -->
   <div class="f-note">By jaki · Ur Bf</div>
 </footer>
 
-<!-- ═══════════════ AUDIO PLAYER SCRIPT ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     SCRIPT 1 — Audio Player Musik
+     Mengatur playlist, play/pause, dan progress
+     ═══════════════════════════════════════ -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-  var tracks = [
-    { src: 'Hanya Untukmu by Ten2five.aac',                  title: 'Hanya Untukmu',             artist: 'Ten2five' },
-    { src: "Can't Help Falling In Love by Elvis Presley.aac", title: "Can't Help Falling In Love", artist: 'Elvis Presley' },
-    { src: 'Shape Of My Heart by Backstreetboys.aac',         title: 'Shape Of My Heart',          artist: 'Backstreet Boys' },
-    { src: 'Love by Wave To Earth.aac',                       title: 'Love',                       artist: 'Wave to Earth' },
-    { src: 'Heaven by Bryan Adams.aac',                       title: 'Heaven',                     artist: 'Bryan Adams' },
-    { src: 'An Art Gallery Could Never Be As Unique As You by Mrld.aac',         title: 'An Art Gallery Could Never Be As Unique As You',                     artist: 'Mrld' },
-    { src: 'Stand By Me by Oasis.aac',                                 title: 'Stand By Me',                     artist: 'Oasis' },
+  // --- Data playlist: nama file, judul, artis ---
+  var daftarLagu = [
+    { src: 'Hanya Untukmu by Ten2five.aac',                             title: 'Hanya Untukmu',                                  artist: 'Ten2five' },
+    { src: "Can't Help Falling In Love by Elvis Presley.aac",           title: "Can't Help Falling In Love",                     artist: 'Elvis Presley' },
+    { src: 'Shape Of My Heart by Backstreetboys.aac',                   title: 'Shape Of My Heart',                              artist: 'Backstreet Boys' },
+    { src: 'Love by Wave To Earth.aac',                                 title: 'Love',                                           artist: 'Wave to Earth' },
+    { src: 'Heaven by Bryan Adams.aac',                                 title: 'Heaven',                                         artist: 'Bryan Adams' },
+    { src: 'An Art Gallery Could Never Be As Unique As You by Mrld.aac',title: 'An Art Gallery Could Never Be As Unique As You', artist: 'Mrld' },
+    { src: 'Stand By Me by Oasis.aac',                                  title: 'Stand By Me',                                    artist: 'Oasis' },
   ];
 
-  var current   = 0;
-  var isPlaying = false;
+  // --- Variabel status player ---
+  var indexSaatIni = 0;   // Indeks lagu yang sedang diputar
+  var sedangMain   = false; // Status play/pause
 
-  var audio     = document.getElementById('audioPlayer');
-  var btnPlay   = document.getElementById('btnPlay');
-  var btnPrev   = document.getElementById('btnPrev');
-  var btnNext   = document.getElementById('btnNext');
-  var iconPlay  = document.getElementById('iconPlay');
-  var iconPause = document.getElementById('iconPause');
-  var vinyl     = document.getElementById('vinylArt');
-  var titleEl   = document.getElementById('trackTitle');
-  var artistEl  = document.getElementById('trackArtist');
-  var fillEl    = document.getElementById('progressFill');
-  var barEl     = document.getElementById('progressBar');
-  var curEl     = document.getElementById('timeCurrent');
-  var durEl     = document.getElementById('timeDuration');
-  var items     = document.querySelectorAll('.track-item');
+  // --- Ambil semua elemen HTML yang dibutuhkan ---
+  var elAudio    = document.getElementById('audioPlayer');
+  var elBtnPlay  = document.getElementById('btnPlay');
+  var elBtnPrev  = document.getElementById('btnPrev');
+  var elBtnNext  = document.getElementById('btnNext');
+  var elIkonPlay = document.getElementById('iconPlay');
+  var elIkonPause= document.getElementById('iconPause');
+  var elVinyl    = document.getElementById('vinylArt');
+  var elJudul    = document.getElementById('trackTitle');
+  var elArtis    = document.getElementById('trackArtist');
+  var elIsiBar   = document.getElementById('progressFill');
+  var elBarArea  = document.getElementById('progressBar');
+  var elWaktuNow = document.getElementById('timeCurrent');
+  var elWaktuDur = document.getElementById('timeDuration');
+  var elSemuaTrack = document.querySelectorAll('.track-item');
 
-  function fmt(s) {
-    if (!s || isNaN(s) || !isFinite(s)) return '0:00';
-    var m = Math.floor(s / 60);
-    var sec = Math.floor(s % 60);
-    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  // --- Fungsi: format detik jadi "m:ss" ---
+  function formatWaktu(detik) {
+    // Jika nilai tidak valid, tampilkan 0:00
+    if (!detik || isNaN(detik) || !isFinite(detik)) return '0:00';
+    var menit  = Math.floor(detik / 60);
+    var sisa   = Math.floor(detik % 60);
+    return menit + ':' + (sisa < 10 ? '0' : '') + sisa;
   }
 
-  function setUI(playing) {
-    isPlaying = playing;
-    iconPlay.style.display  = playing ? 'none'  : 'block';
-    iconPause.style.display = playing ? 'block' : 'none';
-    if (playing) vinyl.classList.add('spinning');
-    else         vinyl.classList.remove('spinning');
+  // --- Fungsi: update tampilan tombol play/pause dan animasi vinyl ---
+  function updateTampilanUI(statusMain) {
+    sedangMain = statusMain;
+    // Tampilkan ikon yang sesuai
+    elIkonPlay.style.display  = statusMain ? 'none'  : 'block';
+    elIkonPause.style.display = statusMain ? 'block' : 'none';
+    // Putar atau hentikan animasi vinyl
+    if (statusMain) elVinyl.classList.add('spinning');
+    else            elVinyl.classList.remove('spinning');
   }
 
-  function updateActive(idx) {
-    items.forEach(function(el, i) {
+  // --- Fungsi: tandai track yang sedang aktif di playlist ---
+  function tandaiTrackAktif(idx) {
+    elSemuaTrack.forEach(function(el, i) {
+      // Tambah class "active" hanya pada lagu yang sedang dipilih
       el.classList.toggle('active', i === idx);
     });
   }
 
-  function loadTrack(idx) {
-    current = idx;
-    var t   = tracks[idx];
+  // --- Fungsi: muat track baru ke player ---
+  function muatTrack(idx) {
+    indexSaatIni = idx;
+    var track = daftarLagu[idx];
 
-    /* Reset UI */
-    titleEl.textContent  = t.title;
-    artistEl.textContent = t.artist;
-    fillEl.style.width   = '0%';
-    curEl.textContent    = '0:00';
-    durEl.textContent    = '0:00';
-    updateActive(idx);
+    // Reset tampilan UI ke kondisi awal
+    elJudul.textContent    = track.title;
+    elArtis.textContent    = track.artist;
+    elIsiBar.style.width   = '0%';
+    elWaktuNow.textContent = '0:00';
+    elWaktuDur.textContent = '0:00';
+    tandaiTrackAktif(idx);
 
-    /* Completely reset audio element */
-    audio.pause();
-    audio.removeAttribute('src');
-    audio.load();
-    audio.src = t.src;
-    audio.load();
+    // Reset elemen audio sepenuhnya sebelum ganti src
+    elAudio.pause();
+    elAudio.removeAttribute('src');
+    elAudio.load();
+    elAudio.src = track.src;
+    elAudio.load();
   }
 
-  function doPlay() {
-    var promise = audio.play();
-    if (promise !== undefined) {
-      promise.then(function() {
-        setUI(true);
-      }).catch(function(err) {
-        console.warn('Playback failed:', err);
-        setUI(false);
+  // --- Fungsi: jalankan audio dan tangani error ---
+  function jalankanPlay() {
+    var janji = elAudio.play(); // Mengembalikan Promise
+    if (janji !== undefined) {
+      janji.then(function() {
+        // Berhasil diputar
+        updateTampilanUI(true);
+      }).catch(function(kesalahan) {
+        // Gagal diputar (misal: format tidak didukung atau file tidak ada)
+        console.warn('Gagal memutar lagu:', kesalahan);
+        updateTampilanUI(false);
       });
     } else {
-      setUI(true);
+      updateTampilanUI(true);
     }
   }
 
-  function togglePlay() {
-    if (!audio.src || audio.src === window.location.href) {
-      loadTrack(current);
+  // --- Fungsi: toggle play / pause ---
+  function togglePlayPause() {
+    // Jika belum ada src, muat track pertama dulu
+    if (!elAudio.src || elAudio.src === window.location.href) {
+      muatTrack(indexSaatIni);
     }
-    if (audio.paused) {
-      doPlay();
+    // Jika sedang pause → play; jika sedang play → pause
+    if (elAudio.paused) {
+      jalankanPlay();
     } else {
-      audio.pause();
-      setUI(false);
+      elAudio.pause();
+      updateTampilanUI(false);
     }
   }
 
-  /* Audio events */
-  audio.addEventListener('play',  function() { setUI(true);  });
-  audio.addEventListener('pause', function() { setUI(false); });
-  audio.addEventListener('ended', function() {
-    setUI(false);
-    var next = (current + 1) % tracks.length;
-    loadTrack(next);
-    doPlay();
+  // --- Event: status audio berubah ---
+  elAudio.addEventListener('play',  function() { updateTampilanUI(true);  });
+  elAudio.addEventListener('pause', function() { updateTampilanUI(false); });
+
+  // Otomatis lanjut ke lagu berikutnya saat selesai
+  elAudio.addEventListener('ended', function() {
+    updateTampilanUI(false);
+    var lagBerikutnya = (indexSaatIni + 1) % daftarLagu.length;
+    muatTrack(lagBerikutnya);
+    jalankanPlay();
   });
 
-  audio.addEventListener('timeupdate', function() {
-    if (!audio.duration || isNaN(audio.duration)) return;
-    var pct = (audio.currentTime / audio.duration) * 100;
-    fillEl.style.width = pct + '%';
-    curEl.textContent  = fmt(audio.currentTime);
-    durEl.textContent  = fmt(audio.duration);
+  // Update progress bar & timer saat lagu berjalan
+  elAudio.addEventListener('timeupdate', function() {
+    if (!elAudio.duration || isNaN(elAudio.duration)) return;
+    var persentase = (elAudio.currentTime / elAudio.duration) * 100;
+    elIsiBar.style.width    = persentase + '%';
+    elWaktuNow.textContent  = formatWaktu(elAudio.currentTime);
+    elWaktuDur.textContent  = formatWaktu(elAudio.duration);
   });
 
-  audio.addEventListener('loadedmetadata', function() {
-    durEl.textContent = fmt(audio.duration);
-    var span = document.querySelector('.track-dur[data-index="' + current + '"]');
-    if (span) span.textContent = fmt(audio.duration);
+  // Update durasi ketika metadata audio sudah dimuat
+  elAudio.addEventListener('loadedmetadata', function() {
+    elWaktuDur.textContent = formatWaktu(elAudio.duration);
+    // Tampilkan durasi pada item playlist yang sesuai
+    var elDurasi = document.querySelector('.track-dur[data-index="' + indexSaatIni + '"]');
+    if (elDurasi) elDurasi.textContent = formatWaktu(elAudio.duration);
   });
 
-  audio.addEventListener('error', function() {
-    console.error('Audio error — pastikan file .aac ada di folder yang sama:', tracks[current].src);
+  // Log error jika file audio tidak ditemukan
+  elAudio.addEventListener('error', function() {
+    console.error('File audio tidak ditemukan. Cek nama file di folder yang sama:', daftarLagu[indexSaatIni].src);
   });
 
-  /* Progress bar click */
-  barEl.addEventListener('click', function(e) {
-    if (!audio.duration || isNaN(audio.duration)) return;
-    var rect = barEl.getBoundingClientRect();
-    var pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    audio.currentTime = pct * audio.duration;
+  // --- Klik progress bar untuk seek (loncat ke posisi tertentu) ---
+  elBarArea.addEventListener('click', function(e) {
+    if (!elAudio.duration || isNaN(elAudio.duration)) return;
+    var ukuranBar  = elBarArea.getBoundingClientRect();
+    // Hitung posisi klik dalam rentang 0–1
+    var posisi = Math.max(0, Math.min(1, (e.clientX - ukuranBar.left) / ukuranBar.width));
+    elAudio.currentTime = posisi * elAudio.duration;
   });
 
-  /* Buttons */
-  btnPlay.addEventListener('click', togglePlay);
+  // --- Tombol play/pause diklik ---
+  elBtnPlay.addEventListener('click', togglePlayPause);
 
-  btnPrev.addEventListener('click', function() {
-    var wasPlaying = !audio.paused;
-    loadTrack((current - 1 + tracks.length) % tracks.length);
-    if (wasPlaying) doPlay();
+  // --- Tombol prev: kembali ke lagu sebelumnya ---
+  elBtnPrev.addEventListener('click', function() {
+    var sedangDiputar = !elAudio.paused;
+    muatTrack((indexSaatIni - 1 + daftarLagu.length) % daftarLagu.length);
+    if (sedangDiputar) jalankanPlay();
   });
 
-  btnNext.addEventListener('click', function() {
-    var wasPlaying = !audio.paused;
-    loadTrack((current + 1) % tracks.length);
-    if (wasPlaying) doPlay();
+  // --- Tombol next: lanjut ke lagu berikutnya ---
+  elBtnNext.addEventListener('click', function() {
+    var sedangDiputar = !elAudio.paused;
+    muatTrack((indexSaatIni + 1) % daftarLagu.length);
+    if (sedangDiputar) jalankanPlay();
   });
 
-  items.forEach(function(el) {
+  // --- Klik item playlist: langsung putar lagu tersebut ---
+  elSemuaTrack.forEach(function(el) {
     el.addEventListener('click', function() {
-      var idx = parseInt(el.dataset.index, 10);
-      loadTrack(idx);
-      doPlay();
+      var indexDipilih = parseInt(el.dataset.index, 10);
+      muatTrack(indexDipilih);
+      jalankanPlay();
     });
   });
 
-  /* Load first track on ready */
-  loadTrack(0);
-});
+  // --- Muat track pertama saat halaman selesai dimuat ---
+  muatTrack(0);
+
+}); // Akhir DOMContentLoaded
 </script>
 
-<!-- ═══════════════ LOADING SCREEN SCRIPT ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     SCRIPT 2 — Loading Screen
+     Mengatur urutan animasi amplop loading
+     ═══════════════════════════════════════ -->
 <script>
 (function() {
-  var screen  = document.getElementById('loadingScreen');
-  var flap    = document.getElementById('lsFlap');
-  var letter  = document.getElementById('lsLetter');
-  var caption = document.getElementById('lsCaption');
-  var env     = document.getElementById('lsEnvelope');
+  // Ambil semua elemen loading screen
+  var elScreen  = document.getElementById('loadingScreen');
+  var elFlap    = document.getElementById('lsFlap');
+  var elSurat   = document.getElementById('lsLetter');
+  var elCaption = document.getElementById('lsCaption');
+  var elAmplop  = document.getElementById('lsEnvelope');
 
-  // step 1 — tunggu sebentar lalu buka flap
+  // Langkah 1 — setelah 600ms: buka tutup amplop
   setTimeout(function() {
-    flap.classList.add('open');
+    elFlap.classList.add('open');
   }, 600);
 
-  // step 2 — surat naik
+  // Langkah 2 — setelah 1400ms: surat naik & teks berganti
   setTimeout(function() {
-    letter.classList.add('rise');
-    caption.textContent = 'happy birthday, sayang ♡';
+    elSurat.classList.add('rise');
+    elCaption.textContent = 'happy birthday, sayang ♡';
   }, 1400);
 
-  // step 3 — amplop shake kecil
+  // Langkah 3 — setelah 2000ms: amplop goyang kecil
   setTimeout(function() {
-    env.classList.add('wiggle');
+    elAmplop.classList.add('wiggle');
   }, 2000);
 
-  // step 4 — fade out loading screen
+  // Langkah 4 — setelah 2800ms: loading screen mulai memudar
   setTimeout(function() {
-    screen.classList.add('ls-hide');
+    elScreen.classList.add('ls-hide');
   }, 2800);
 
-  // step 5 — remove dari DOM
+  // Langkah 5 — setelah 3600ms: hapus loading screen dari DOM sepenuhnya
   setTimeout(function() {
-    screen.remove();
+    elScreen.remove();
   }, 3600);
-})();
+
+})(); // Langsung dipanggil (IIFE)
 </script>
 
-<!-- ═══════════════ VOICE NOTE SCRIPT ═══════════════ -->
+<!-- ═══════════════════════════════════════
+     SCRIPT 3 — Voice Note Player
+     Mengatur pemutar pesan suara
+     ═══════════════════════════════════════ -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var vnAudio    = document.getElementById('vnAudio');
-  var vnPlayBtn  = document.getElementById('vnPlayBtn');
-  var vnIconPlay = document.getElementById('vnIconPlay');
-  var vnIconPause= document.getElementById('vnIconPause');
-  var vnTime     = document.getElementById('vnTime');
-  var vnWaveform = document.getElementById('vnWaveform');
-  var vnBars     = vnWaveform.querySelectorAll('span');
 
-  // Format waktu
-  function fmtVn(s) {
-    if (!s || isNaN(s) || !isFinite(s)) return '0:00';
-    var m = Math.floor(s / 60);
-    var sec = Math.floor(s % 60);
-    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  // --- Ambil semua elemen voice note ---
+  var elVnAudio     = document.getElementById('vnAudio');
+  var elVnTombol    = document.getElementById('vnPlayBtn');
+  var elVnIkonPlay  = document.getElementById('vnIconPlay');
+  var elVnIkonPause = document.getElementById('vnIconPause');
+  var elVnTimer     = document.getElementById('vnTime');
+  var elVnWave      = document.getElementById('vnWaveform');
+  var elSemuaBar    = elVnWave.querySelectorAll('span'); // Semua bar waveform
+
+  // --- Fungsi: format waktu untuk voice note ---
+  function formatWaktuVN(detik) {
+    if (!detik || isNaN(detik) || !isFinite(detik)) return '0:00';
+    var menit = Math.floor(detik / 60);
+    var sisa  = Math.floor(detik % 60);
+    return menit + ':' + (sisa < 10 ? '0' : '') + sisa;
   }
 
-  // Animasi waveform saat play
-  function startWave() {
-    vnWaveform.classList.add('playing');
-  }
-  function stopWave() {
-    vnWaveform.classList.remove('playing');
-  }
+  // --- Fungsi: mulai animasi waveform ---
+  function animasiWaveOn()  { elVnWave.classList.add('playing'); }
 
-  // Toggle play/pause
-  vnPlayBtn.addEventListener('click', function() {
-    if (vnAudio.paused) {
-      // Pause musik utama dulu kalau lagi main
-      var mainAudio = document.getElementById('audioPlayer');
-      if (mainAudio && !mainAudio.paused) mainAudio.pause();
+  // --- Fungsi: hentikan animasi waveform ---
+  function animasiWaveOff() { elVnWave.classList.remove('playing'); }
 
-      vnAudio.play().then(function() {
-        vnIconPlay.style.display  = 'none';
-        vnIconPause.style.display = 'block';
-        startWave();
+  // --- Tombol play/pause voice note diklik ---
+  elVnTombol.addEventListener('click', function() {
+    if (elVnAudio.paused) {
+      // Jika musik utama sedang main, pause dulu agar tidak tumpang tindih
+      var elAudioUtama = document.getElementById('audioPlayer');
+      if (elAudioUtama && !elAudioUtama.paused) elAudioUtama.pause();
+
+      // Putar voice note
+      elVnAudio.play().then(function() {
+        elVnIkonPlay.style.display  = 'none';
+        elVnIkonPause.style.display = 'block';
+        animasiWaveOn();
       }).catch(function(e) {
-        console.warn('VN play failed:', e);
+        // File voicenote tidak ditemukan atau format tidak didukung
+        console.warn('Voice note gagal diputar:', e);
       });
+
     } else {
-      vnAudio.pause();
-      vnIconPlay.style.display  = 'block';
-      vnIconPause.style.display = 'none';
-      stopWave();
+      // Sedang main → pause
+      elVnAudio.pause();
+      elVnIkonPlay.style.display  = 'block';
+      elVnIkonPause.style.display = 'none';
+      animasiWaveOff();
     }
   });
 
-  // Update timer & progress waveform
-  vnAudio.addEventListener('timeupdate', function() {
-    vnTime.textContent = fmtVn(vnAudio.currentTime);
+  // --- Update timer dan highlight bar sesuai progress ---
+  elVnAudio.addEventListener('timeupdate', function() {
+    elVnTimer.textContent = formatWaktuVN(elVnAudio.currentTime);
 
-    // Highlight bar sesuai progress
-    if (vnAudio.duration && !isNaN(vnAudio.duration)) {
-      var pct = vnAudio.currentTime / vnAudio.duration;
-      var filled = Math.floor(pct * vnBars.length);
-      vnBars.forEach(function(bar, i) {
-        bar.classList.toggle('filled', i <= filled);
+    // Hitung berapa bar yang harus diwarnai (sudah terputar)
+    if (elVnAudio.duration && !isNaN(elVnAudio.duration)) {
+      var persentase   = elVnAudio.currentTime / elVnAudio.duration;
+      var barTerisi    = Math.floor(persentase * elSemuaBar.length);
+      elSemuaBar.forEach(function(bar, i) {
+        // Bar sebelum posisi saat ini = berwarna (class "filled")
+        bar.classList.toggle('filled', i <= barTerisi);
       });
     }
   });
 
-  // Selesai
-  vnAudio.addEventListener('ended', function() {
-    vnIconPlay.style.display  = 'block';
-    vnIconPause.style.display = 'none';
-    stopWave();
-    vnTime.textContent = '0:00';
-    vnBars.forEach(function(bar) { bar.classList.remove('filled'); });
-    vnAudio.currentTime = 0;
+  // --- Reset tampilan saat voice note selesai ---
+  elVnAudio.addEventListener('ended', function() {
+    elVnIkonPlay.style.display  = 'block';
+    elVnIkonPause.style.display = 'none';
+    animasiWaveOff();
+    elVnTimer.textContent = '0:00';
+    // Hapus semua warna bar
+    elSemuaBar.forEach(function(bar) { bar.classList.remove('filled'); });
+    elVnAudio.currentTime = 0;
   });
 
-  // Error handler
-  vnAudio.addEventListener('error', function() {
-    console.warn('Voice note file tidak ditemukan. Taruh file "voicenote.aac" atau "voicenote.mp3" di folder project.');
+  // --- Error handler: file voice note tidak ditemukan ---
+  elVnAudio.addEventListener('error', function() {
+    console.warn('File voice note tidak ditemukan. Taruh file "voicenote.aac" atau "voicenote.mp3" di folder project.');
   });
-});
+
+}); // Akhir DOMContentLoaded
 </script>
 
 </body>
+</html>
