@@ -113,63 +113,66 @@
     <!-- Garis ornamen bawah judul -->
     <div class="section-rule"></div>
 
-    <!-- Kartu player utama -->
+    <!-- Kartu player utama — layout horizontal -->
     <div class="music-card">
       <div class="player-wrap">
 
-        <!-- Vinyl / album art berputar saat play -->
-        <div class="music-art" id="vinylArt">
-          <svg viewBox="0 0 24 24">
-            <path d="M9 18V5l12-2v13"/>
-            <circle cx="6" cy="18" r="3"/>
-            <circle cx="18" cy="16" r="3"/>
-          </svg>
+        <div class="player-top">
+          <!-- Vinyl record icon -->
+          <div class="music-art" id="vinylArt">
+            <svg viewBox="0 0 48 48" fill="none">
+              <!-- Ring luar -->
+              <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+              <!-- Ring tengah -->
+              <circle cx="24" cy="24" r="14" fill="rgba(232,83,122,0.08)" stroke="rgba(232,83,122,0.2)" stroke-width="0.8"/>
+              <!-- Ring dalam -->
+              <circle cx="24" cy="24" r="8" fill="rgba(232,83,122,0.15)" stroke="rgba(232,83,122,0.35)" stroke-width="0.8"/>
+              <!-- Lubang tengah -->
+              <circle cx="24" cy="24" r="2.5" fill="rgba(232,83,122,0.9)"/>
+              <!-- Highlight groove kiri atas -->
+              <path d="M10 16 Q16 10 24 10" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none" stroke-linecap="round"/>
+              <path d="M8 22 Q9 14 16 10" stroke="rgba(255,255,255,0.04)" stroke-width="1" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Info lagu kanan -->
+          <div class="player-info">
+            <div class="music-artist" id="trackArtist">Ten2five</div>
+            <div class="music-title" id="trackTitle">Hanya Untukmu</div>
+            <div class="player-controls">
+              <button class="ctrl-btn" id="btnPrev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="19 20 9 12 19 4 19 20"/>
+                  <line x1="5" y1="19" x2="5" y2="5"/>
+                </svg>
+              </button>
+              <button class="play-btn" id="btnPlay">
+                <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
+                <svg id="iconPause" viewBox="0 0 24 24" style="display:none">
+                  <rect x="6" y="4" width="4" height="16" rx="1" fill="white"/>
+                  <rect x="14" y="4" width="4" height="16" rx="1" fill="white"/>
+                </svg>
+              </button>
+              <button class="ctrl-btn" id="btnNext">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 4 15 12 5 20 5 4"/>
+                  <line x1="19" y1="5" x2="19" y2="19"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Nama lagu yang sedang diputar -->
-        <div class="music-title" id="trackTitle">Hanya Untukmu</div>
-        <!-- Nama artis -->
-        <div class="music-artist" id="trackArtist">Ten2five</div>
-
-        <!-- Bar progres lagu — bisa diklik untuk seek -->
-        <div class="progress-bar" id="progressBar">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-
-        <!-- Tampilan waktu: posisi saat ini & total durasi -->
-        <div class="time-row">
+        <!-- Progress + waktu -->
+        <div class="player-bottom">
           <span id="timeCurrent">0:00</span>
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
           <span id="timeDuration">0:00</span>
         </div>
 
-        <!-- Tombol kontrol: prev, play/pause, next -->
-        <div class="player-controls">
-          <button class="ctrl-btn" id="btnPrev" title="Sebelumnya">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="19 20 9 12 19 4 19 20"/>
-              <line x1="5" y1="19" x2="5" y2="5"/>
-            </svg>
-          </button>
-          <button class="play-btn" id="btnPlay">
-            <!-- Ikon play (segitiga) -->
-            <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
-            <!-- Ikon pause (dua kotak) — tersembunyi saat tidak diputar -->
-            <svg id="iconPause" viewBox="0 0 24 24" style="display:none">
-              <rect x="6" y="4" width="4" height="16" rx="1" fill="white"/>
-              <rect x="14" y="4" width="4" height="16" rx="1" fill="white"/>
-            </svg>
-          </button>
-          <button class="ctrl-btn" id="btnNext" title="Berikutnya">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 4 15 12 5 20 5 4"/>
-              <line x1="19" y1="5" x2="19" y2="19"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Elemen audio HTML5 — sumber file ditambahkan lewat JavaScript -->
         <audio id="audioPlayer" preload="none"></audio>
-
       </div>
     </div>
 
