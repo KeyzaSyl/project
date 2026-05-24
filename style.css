@@ -118,107 +118,100 @@ nav a:hover { color: var(--pink-utama); }
   pointer-events: none;
 }
 
-/* Kelopak bunga jatuh — kini lebih transparan di tema gelap */
-.petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-.petal {
-  position: absolute;
-  width: 6px; height: 9px;
-  background: radial-gradient(ellipse at 35% 25%, rgba(232,83,122,0.6), rgba(196,62,97,0.1));
-  border-radius: 70% 10% 70% 10%;
-  animation: jatuh linear infinite;
-  opacity: 0;
-}
-/* Posisi & timing tiap kelopak */
-.petal:nth-child(1)  { left: 5%;  animation-duration: 9s;  animation-delay: 0s;   width: 5px; height: 8px; }
-.petal:nth-child(2)  { left: 15%; animation-duration: 12s; animation-delay: 1.5s; width: 4px; height: 7px; }
-.petal:nth-child(3)  { left: 25%; animation-duration: 10s; animation-delay: 3s; }
-.petal:nth-child(4)  { left: 35%; animation-duration: 13s; animation-delay: 0.5s; width: 7px; height: 10px; }
-.petal:nth-child(5)  { left: 50%; animation-duration: 11s; animation-delay: 2s; }
-.petal:nth-child(6)  { left: 62%; animation-duration: 9.5s; animation-delay: 4s; width: 5px; height: 7px; }
-.petal:nth-child(7)  { left: 72%; animation-duration: 14s; animation-delay: 1s; width: 6px; height: 9px; }
-.petal:nth-child(8)  { left: 82%; animation-duration: 10s; animation-delay: 2.8s; }
-.petal:nth-child(9)  { left: 90%; animation-duration: 12s; animation-delay: 0.8s; }
-.petal:nth-child(10) { left: 44%; animation-duration: 15s; animation-delay: 3.5s; width: 4px; height: 6px; }
-.petal:nth-child(11) { left: 57%; animation-duration: 8.5s; animation-delay: 5s; }
-.petal:nth-child(12) { left: 4%;  animation-duration: 11s; animation-delay: 6s; width: 7px; height: 10px; }
-
-/* Animasi kelopak jatuh */
-@keyframes jatuh {
-  0%   { transform: translateY(-60px) rotate(0deg) translateX(0px);    opacity: 0; }
-  8%   { opacity: 0.7; }
-  50%  { transform: translateY(52vh) rotate(200deg) translateX(16px);   opacity: 0.4; }
-  92%  { opacity: 0.15; }
-  100% { transform: translateY(108vh) rotate(380deg) translateX(-10px); opacity: 0; }
+/* ─── HERO — SINGLE FULLSCREEN PHOTO, TEKS KIRI BAWAH ─── */
+#home {
+  position: relative;
+  width: 100%; height: 100vh;
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: flex-start;
 }
 
-/* Konten utama hero */
-.hero-content { position: relative; z-index: 2; padding: 2rem 1.5rem; }
+/* Foto background tunggal */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay — hanya di area teks (kanan tengah), tipis di tempat lain */
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to left,
+      rgba(6,2,5,0.72) 0%,
+      rgba(6,2,5,0.55) 40%,
+      rgba(6,2,5,0.1)  75%,
+      transparent      100%);
+}
+
+/* Konten teks — kanan bawah */
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 3rem 4rem;
+  max-width: 580px;
+  text-align: left;
+  margin-left: auto;
+}
 
 /* Label kecil di atas judul */
-.hero-tag {
-  display: inline-block;
-  font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--pink-utama); opacity: 0;
-  margin-bottom: 1.8rem;
-  animation: fadeNaik 1s 0.3s both;
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem; font-weight: 400;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--teks-utama);
+  margin-bottom: 0.5rem;
+  animation: fadeNaik 1s 0.2s both; opacity: 0;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
-/* Judul besar "Happy Birthday" */
+/* Judul Happy Birthday */
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(4rem, 12vw, 9.5rem);
-  font-weight: 700; line-height: 0.9;
-  color: var(--teks-utama);
-  letter-spacing: -0.03em;
-  animation: fadeNaik 1s 0.55s both; opacity: 0;
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-weight: 700; line-height: 0.92;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  animation: fadeNaik 1s 0.4s both; opacity: 0;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.4);
 }
-/* Kata "Birthday" dalam style italic & warna pink */
 .hero-title em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--pink-utama);
-  display: block;
+  font-style: italic; font-weight: 400;
+  color: var(--pink-utama); display: block;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
-/* Nama kekasih di bawah judul */
+/* Nama */
 .hero-name {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: clamp(0.75rem, 2vw, 1rem);
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--teks-muted);
-  margin-top: 1.5rem; margin-bottom: 0.8rem;
-  animation: fadeNaik 1s 0.8s both; opacity: 0;
+  font-weight: 400;
+  font-size: clamp(0.6rem, 1.4vw, 0.75rem);
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-top: 1rem;
+  animation: fadeNaik 1s 0.65s both; opacity: 0;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 
-/* Garis pemisah di bawah nama */
-.hero-divider {
-  width: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--pink-utama), transparent);
-  margin: 1rem auto;
-  animation: melebar 1.2s 1s forwards; opacity: 0;
+/* Scroll hint — pojok kanan bawah */
+.scroll-hint {
+  position: absolute; bottom: 2.2rem; right: 2.2rem;
+  z-index: 2;
+  animation: fadeNaik 1s 1s both, bobble 2.5s 2.5s ease-in-out infinite;
+  opacity: 0;
 }
-@keyframes melebar { to { width: 120px; opacity: 1; } }
-
-/* Teks sub-judul kecil */
-.hero-sub {
-  font-family: 'Playfair Display', serif;
-  font-style: italic; font-weight: 400;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--teks-muted);
-  animation: fadeNaik 1s 1.2s both; opacity: 0;
-  margin-bottom: 3rem;
+.scroll-hint svg {
+  width: 18px; height: 18px;
+  stroke: rgba(255,255,255,0.28); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
 }
-
-/* Panah scroll di bawah hero */
-.scroll-hint { animation: fadeNaik 1s 1.8s both, naik-turun 2.5s 3s ease-in-out infinite; opacity: 0; }
-.scroll-hint svg { width: 20px; height: 20px; stroke: var(--pink-lembut); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Animasi naik-turun untuk scroll hint */
 @keyframes naik-turun { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 
 /* Animasi muncul dari bawah */
-@keyframes fadeNaik { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeNaik { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
 
 /* ══════════════════════════════════
    SECTION — Style Umum
@@ -866,4 +859,55 @@ footer .f-note { font-size: 0.65rem; font-weight: 400; opacity: 0.3; letter-spac
   .vn-waveform { height: 24px; gap: 2px; }
   .vn-waveform span { max-width: 3px; }
   .vn-time { font-size: 0.62rem; min-width: 24px; }
-} 
+}
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ══════════════════════════════════════ */
+
+/* State awal — semua elemen yang akan dianimasikan */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal.reveal-scale {
+  transform: translateY(20px) scale(0.96);
+}
+
+/* State masuk — saat elemen terlihat */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Delay bertingkat untuk elemen dalam satu grup */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+.reveal-delay-7 { transition-delay: 0.56s; }
+.reveal-delay-8 { transition-delay: 0.64s; }
+
+/* Polaroid — scale dari sedikit kecil */
+.polaroid.reveal {
+  transform: rotate(var(--tilt, 0deg)) translateY(24px) scale(0.95);
+}
+.polaroid.is-visible {
+  transform: rotate(var(--tilt, 0deg)) translateY(0) scale(1);
+}
+.polaroid:hover.is-visible {
+  transform: scale(1.06) rotate(0deg) !important;
+}

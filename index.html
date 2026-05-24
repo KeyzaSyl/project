@@ -59,37 +59,31 @@
 </nav>
 
 <!-- ═══════════════════════════════════════
-     HERO SECTION — Halaman pertama
+     HERO SECTION — Single fullscreen photo, text kiri bawah
      ═══════════════════════════════════════ -->
 <section id="home">
 
-  <!-- Kelopak bunga jatuh sebagai dekorasi latar -->
-  <div class="petals">
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <!-- Satu foto background fullscreen -->
+  <div class="hero-bg" style="background-image: url('home.jpg')"></div>
+
+  <!-- Overlay gradient bawah & kiri biar teks terbaca -->
+  <div class="hero-overlay"></div>
+
+  <!-- Konten teks — pojok kiri bawah -->
+  <div class="hero-content">
+    <div class="hero-eyebrow">18th Birthday</div>
+    <div class="hero-title">
+      Happy<br>
+      <em>Birthday!</em>
+    </div>
+    <div class="hero-name">Lala, My beloved girlfriend</div>
   </div>
 
-  <!-- Konten utama hero -->
-  <div class="hero-content">
-
-    <!-- Judul utama besar -->
-    <h1 class="hero-title">
-      Happy<br>
-      <em>Birthday</em>
-    </h1>
-
-    <!-- Nama penerima -->
-    <div class="hero-name">Lala, My beloved girlfriend</div>
-
-    <!-- Garis pemisah dekoratif -->
-    <div class="hero-divider"></div>
-
-    <!-- Ikon panah untuk menunjukkan "scroll ke bawah" -->
-    <div class="scroll-hint">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
+  <!-- Scroll hint pojok kanan bawah -->
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
   </div>
 
 </section>
@@ -104,14 +98,14 @@
   <div class="musik-inner">
 
     <!-- Label kategori kecil -->
-    <div class="section-label">Playlist</div>
+    <div class="section-label reveal">Playlist</div>
     <!-- Judul section -->
-    <h2 class="section-title">Songs For <em>You</em></h2>
+    <h2 class="section-title reveal reveal-delay-1">Songs For <em>You</em></h2>
     <!-- Garis ornamen bawah judul -->
-    <div class="section-rule"></div>
+    <div class="section-rule reveal reveal-delay-2"></div>
 
     <!-- Kartu player utama — layout horizontal -->
-    <div class="music-card">
+    <div class="music-card reveal reveal-delay-3">
       <div class="player-wrap">
 
         <div class="player-top">
@@ -174,7 +168,7 @@
     </div>
 
     <!-- Kartu daftar playlist -->
-    <div class="music-card">
+    <div class="music-card reveal reveal-delay-4">
       <ul class="music-list" id="playlist">
 
         <!-- Track 1 — aktif saat pertama kali dibuka -->
@@ -260,9 +254,9 @@
      GALERI SECTION — Polaroid foto-foto
      ═══════════════════════════════════════ -->
 <section id="galeri">
-  <div class="section-label">Gallery</div>
-  <h2 class="section-title">Lala <em>Pretty</em> Pict's ˙𐃷˙</h2>
-  <div class="section-rule"></div>
+  <div class="section-label reveal">Gallery</div>
+  <h2 class="section-title reveal reveal-delay-1">Lala <em>Pretty</em> Pict's ˙𐃷˙</h2>
+  <div class="section-rule reveal reveal-delay-2"></div>
 
   <!-- Grid polaroid wall -->
   <div class="polaroid-wall">
@@ -275,42 +269,42 @@
     </div>
 
     <!-- Polaroid 2 — lurus -->
-    <div class="polaroid p-straight">
+    <div class="polaroid p-straight reveal reveal-delay-3" style="--tilt:0deg">
       <div class="polaroid-photo pb2">
         <img src="2.jpg" alt="Foto 2">
       </div>
     </div>
 
     <!-- Polaroid 3 — miring kanan -->
-    <div class="polaroid p-tilt-right">
+    <div class="polaroid p-tilt-right reveal reveal-delay-5" style="--tilt:4.5deg">
       <div class="polaroid-photo pb3">
         <img src="3.jpg" alt="Foto 3">
       </div>
     </div>
 
     <!-- Polaroid 4 — lurus -->
-    <div class="polaroid p-straight">
+    <div class="polaroid p-straight reveal reveal-delay-3" style="--tilt:0deg">
       <div class="polaroid-photo pb4">
         <img src="4.jpg" alt="Foto 4">
       </div>
     </div>
 
     <!-- Polaroid 5 — sedikit miring kiri -->
-    <div class="polaroid p-tilt-left-sm">
+    <div class="polaroid p-tilt-left-sm reveal reveal-delay-2" style="--tilt:-2deg">
       <div class="polaroid-photo pb5">
         <img src="5.jpg" alt="Foto 5">
       </div>
     </div>
 
     <!-- Polaroid 6 — sedikit miring kanan -->
-    <div class="polaroid p-tilt-right-sm">
+    <div class="polaroid p-tilt-right-sm reveal reveal-delay-4" style="--tilt:2deg">
       <div class="polaroid-photo pb6">
         <img src="6.jpg" alt="Foto 6">
       </div>
     </div>
 
     <!-- Polaroid 7 — lurus -->
-    <div class="polaroid p-straight">
+    <div class="polaroid p-straight reveal reveal-delay-3" style="--tilt:0deg">
       <div class="polaroid-photo pb7">
         <img src="7.jpg" alt="Foto 7">
       </div>
@@ -334,12 +328,12 @@
      ═══════════════════════════════════════ -->
 <section id="pesan">
   <div class="vn-section-inner">
-    <div class="section-label">from me</div>
-    <h2 class="section-title">a message <em>for you</em></h2>
-    <div class="section-rule"></div>
+    <div class="section-label reveal">from me</div>
+    <h2 class="section-title reveal reveal-delay-1">a message <em>for you</em></h2>
+    <div class="section-rule reveal reveal-delay-2"></div>
 
     <!-- Kartu pemutar voice note ala WhatsApp -->
-    <div class="vn-card">
+    <div class="vn-card reveal reveal-scale reveal-delay-3">
       <div class="vn-row">
 
         <!-- Tombol play/pause voice note -->
@@ -389,11 +383,11 @@
      ═══════════════════════════════════════ -->
 <section id="surat">
   <div class="surat-inner">
-    <h2 class="section-title">Special <em>Letter</em></h2>
-    <div class="section-rule"></div>
+    <h2 class="section-title reveal reveal-delay-1">Special <em>Letter</em></h2>
+    <div class="section-rule reveal reveal-delay-2"></div>
 
     <!-- Amplop surat -->
-    <div class="envelope">
+    <div class="envelope reveal reveal-scale reveal-delay-3">
 
       <!-- Header amplop dengan segel hati -->
       <div class="envelope-top">
@@ -823,6 +817,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 }); // Akhir DOMContentLoaded
+</script>
+
+
+<!-- ═══════════════════════════════════════
+     SCRIPT 4 — Scroll Reveal (Intersection Observer)
+     ═══════════════════════════════════════ -->
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Unobserve setelah animasi jalan — tidak perlu repeat
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,       // muncul saat 12% elemen terlihat
+    rootMargin: '0px 0px -40px 0px'  // sedikit sebelum bottom viewport
+  });
+
+  // Observe semua elemen dengan class .reveal
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
 </script>
 
 </body>
