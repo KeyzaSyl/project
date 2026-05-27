@@ -854,26 +854,29 @@ footer .f-note { font-size: 0.65rem; font-weight: 400; opacity: 0.3; letter-spac
   footer .f-title { font-size: 2rem; }
 
   /* Hero mobile */
-  #home { align-items: flex-end; justify-content: center; }
-  .hero-bg { background-position: center center; }
+  #home { align-items: flex-end; justify-content: flex-start; }
+  .hero-bg {
+    background-position: center top;
+    background-size: cover;
+  }
   .hero-overlay {
     background:
       linear-gradient(to top,
-        rgba(6,2,5,0.95) 0%,
-        rgba(6,2,5,0.65) 28%,
-        rgba(6,2,5,0.1)  58%,
-        transparent      80%);
+        rgba(6,2,5,0.96) 0%,
+        rgba(6,2,5,0.75) 20%,
+        rgba(6,2,5,0.25) 38%,
+        transparent      55%);
   }
   .hero-content {
     margin-left: 0; margin-right: auto;
-    padding: 0 1.5rem 3rem;
+    padding: 0 1.5rem 2.8rem;
     text-align: left;
     max-width: 100%;
   }
-  .hero-title { font-size: clamp(2.8rem, 14vw, 4.5rem); }
-  .hero-eyebrow { font-size: 0.56rem; }
-  .hero-name { font-size: 0.5rem; letter-spacing: 0.2em; }
-  .scroll-hint { bottom: 1.5rem; right: 1.5rem; }
+  .hero-title { font-size: clamp(2.5rem, 13vw, 4rem); line-height: 0.88; }
+  .hero-eyebrow { font-size: 0.54rem; margin-bottom: 0.3rem; }
+  .hero-name { font-size: 0.48rem; letter-spacing: 0.18em; margin-top: 0.6rem; }
+  .scroll-hint { bottom: 1.2rem; right: 1.2rem; }
 
   /* Voice note mobile */
   #pesan { padding: 3.5rem 1.2rem; }
