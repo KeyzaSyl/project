@@ -118,79 +118,82 @@ nav a:hover { color: var(--pink-utama); }
   pointer-events: none;
 }
 
-/* ─── HERO — SINGLE FULLSCREEN PHOTO, TEKS KIRI BAWAH ─── */
+/* ─── HERO — SINGLE FULLSCREEN PHOTO, TEKS BAWAH TENGAH ─── */
 #home {
   position: relative;
   width: 100%; height: 100vh;
   overflow: hidden;
-  display: flex; align-items: flex-end; justify-content: flex-start;
+  display: flex; align-items: flex-end; justify-content: center;
 }
 
-/* Foto background tunggal */
+/* Foto background — landscape 16:9 */
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* Overlay — hanya di area teks (kanan tengah), tipis di tempat lain */
+/* Overlay — gelap di bawah & kiri, foto bersih di atas */
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background:
+    linear-gradient(to top,
+      rgba(6,2,5,0.9) 0%,
+      rgba(6,2,5,0.5) 22%,
+      rgba(6,2,5,0.1) 45%,
+      transparent     62%),
+    linear-gradient(to right,
+      rgba(6,2,5,0.3) 0%,
+      transparent     35%),
     linear-gradient(to left,
-      rgba(6,2,5,0.72) 0%,
-      rgba(6,2,5,0.55) 40%,
-      rgba(6,2,5,0.1)  75%,
-      transparent      100%);
+      rgba(6,2,5,0.2) 0%,
+      transparent     30%);
 }
 
-/* Konten teks — kanan bawah */
+/* Konten teks — kiri bawah */
 .hero-content {
   position: relative; z-index: 2;
-  padding: 0 3rem 4rem;
-  max-width: 580px;
+  padding: 0 3rem 3.5rem;
+  width: 100%;
+  max-width: 520px;
   text-align: left;
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: auto;
 }
 
-/* Label kecil di atas judul */
 .hero-eyebrow {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.65rem; font-weight: 400;
-  letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--teks-utama);
-  margin-bottom: 0.5rem;
+  font-size: 0.62rem; font-weight: 400;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--pink-utama);
+  margin-bottom: 0.4rem;
   animation: fadeNaik 1s 0.2s both; opacity: 0;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
-/* Judul Happy Birthday */
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.2rem, 10vw, 7.5rem);
-  font-weight: 700; line-height: 0.92;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700; line-height: 0.9;
   color: #ffffff;
   letter-spacing: -0.02em;
   animation: fadeNaik 1s 0.4s both; opacity: 0;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
 }
 .hero-title em {
   font-style: italic; font-weight: 400;
   color: var(--pink-utama); display: block;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
 
-/* Nama */
 .hero-name {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  font-size: clamp(0.6rem, 1.4vw, 0.75rem);
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  margin-top: 1rem;
+  font-size: clamp(0.55rem, 1.4vw, 0.72rem);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.9rem;
   animation: fadeNaik 1s 0.65s both; opacity: 0;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 
 /* Scroll hint — pojok kanan bawah */
@@ -850,6 +853,28 @@ footer .f-note { font-size: 0.65rem; font-weight: 400; opacity: 0.3; letter-spac
   footer { padding: 3.5rem 1.2rem; }
   footer .f-title { font-size: 2rem; }
 
+  /* Hero mobile */
+  #home { align-items: flex-end; justify-content: center; }
+  .hero-bg { background-position: center center; }
+  .hero-overlay {
+    background:
+      linear-gradient(to top,
+        rgba(6,2,5,0.95) 0%,
+        rgba(6,2,5,0.65) 28%,
+        rgba(6,2,5,0.1)  58%,
+        transparent      80%);
+  }
+  .hero-content {
+    margin-left: 0; margin-right: auto;
+    padding: 0 1.5rem 3rem;
+    text-align: left;
+    max-width: 100%;
+  }
+  .hero-title { font-size: clamp(2.8rem, 14vw, 4.5rem); }
+  .hero-eyebrow { font-size: 0.56rem; }
+  .hero-name { font-size: 0.5rem; letter-spacing: 0.2em; }
+  .scroll-hint { bottom: 1.5rem; right: 1.5rem; }
+
   /* Voice note mobile */
   #pesan { padding: 3.5rem 1.2rem; }
   .vn-section-inner { max-width: 100%; }
@@ -859,55 +884,4 @@ footer .f-note { font-size: 0.65rem; font-weight: 400; opacity: 0.3; letter-spac
   .vn-waveform { height: 24px; gap: 2px; }
   .vn-waveform span { max-width: 3px; }
   .vn-time { font-size: 0.62rem; min-width: 24px; }
-}
-
-/* ══════════════════════════════════════
-   SCROLL REVEAL ANIMATIONS
-   ══════════════════════════════════════ */
-
-/* State awal — semua elemen yang akan dianimasikan */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.reveal-left {
-  transform: translateX(-28px);
-}
-
-.reveal.reveal-right {
-  transform: translateX(28px);
-}
-
-.reveal.reveal-scale {
-  transform: translateY(20px) scale(0.96);
-}
-
-/* State masuk — saat elemen terlihat */
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Delay bertingkat untuk elemen dalam satu grup */
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-.reveal-delay-4 { transition-delay: 0.32s; }
-.reveal-delay-5 { transition-delay: 0.40s; }
-.reveal-delay-6 { transition-delay: 0.48s; }
-.reveal-delay-7 { transition-delay: 0.56s; }
-.reveal-delay-8 { transition-delay: 0.64s; }
-
-/* Polaroid — scale dari sedikit kecil */
-.polaroid.reveal {
-  transform: rotate(var(--tilt, 0deg)) translateY(24px) scale(0.95);
-}
-.polaroid.is-visible {
-  transform: rotate(var(--tilt, 0deg)) translateY(0) scale(1);
-}
-.polaroid:hover.is-visible {
-  transform: scale(1.06) rotate(0deg) !important;
 }
